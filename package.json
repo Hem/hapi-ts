@@ -1,0 +1,33 @@
+{
+  "name": "hapi-ts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc-watch": "tsc -w",
+    "build": "gulp build",
+    "start": "node build/index.js",
+    "setup": "npm install & typings install",
+    "test": "gulp test",
+    "watch": "nodemon --watch build build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "16.1.0",
+    
+    "hapi-swagger": "7.7.0",
+    "swagger":"0.7.5",
+    "inert":"4.1.0",
+    "vision":"4.1.1"
+
+  },
+  "devDependencies": {
+    
+    "gulp": "3.9.1",
+    "nodemon": "1.11.0",
+    
+    "tslint": "4.5.1",
+    "typescript": "2.2.1"
+  }
+}
