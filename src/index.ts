@@ -18,7 +18,7 @@ const serverConfig = new ServerConfiguration();
         serverConfig.port = 3500;
 
         // list of plugins to load
-        serverConfig.pluginsToLoad = ['swagger'];
+        serverConfig.pluginsToLoad = ['swagger','logger'];
 
         // list of modules to load
         serverConfig.modulesToLoad = ['users', 'groups'];
@@ -32,7 +32,9 @@ const appConfig = new ApplicationStartupParams();
 const hapiServer = Server.init(appConfig);
 
 
-
-hapiServer.start( () => {
-    console.log('Server running at:', hapiServer.info.uri);
-});
+if ( !module.parent ) {
+    
+    hapiServer.start( () => {
+        console.log('Server running at:', hapiServer.info.uri);
+    });
+}

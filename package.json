@@ -21,8 +21,10 @@
     "hapi-swagger": "7.7.0",
     "swagger":"0.7.5",
     "inert":"4.1.0",
-    "vision":"4.1.1"
+    "vision":"4.1.1",
 
+    "good": "7.1.0",
+    "good-console": "6.4.0"
   },
   "devDependencies": {
     
