@@ -13,6 +13,7 @@ export class ApplicationStartupParams implements IApplicationConfiguration {
 }
 
 export class ServerConfiguration implements IServerConfiguration {
+    host: string;
     port: number;
     pluginsToLoad: String[];
     modulesToLoad: String[];

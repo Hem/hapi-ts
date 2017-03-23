@@ -9,6 +9,12 @@ export interface IApplicationConfiguration {
 export interface IServerConfiguration {
     
     /**
+     * Host name
+     */
+    host: string;
+
+
+    /**
      * Port number for the API
      */
     port: number;

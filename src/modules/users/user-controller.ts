@@ -5,7 +5,7 @@ import * as Hapi from "hapi";
 
 export default class UserController {
 
-    constructor( dbConfig:IDbConfiguration ) {}
+    constructor(public dbConfig:IDbConfiguration ) {}
 
 
     public findUsers( request: Hapi.Request, reply: Hapi.IReply ) {

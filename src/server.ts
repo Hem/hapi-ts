@@ -20,7 +20,7 @@ export function init(  params: ApplicationStartupParams ) : Hapi.Server {
 
 
     server.connection({
-        host: "0.0.0.0",
+        host: params.serverConfiguration.host,
         port: process.env.port || params.serverConfiguration.port,
         routes: {
             cors: true

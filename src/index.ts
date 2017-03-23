@@ -14,9 +14,16 @@ const dbConfig = new DbConfiguration();
         dbConfig.dbPassword = "tiger";
         
 const serverConfig = new ServerConfiguration();
+        serverConfig.host = "localhost";
         serverConfig.port = 3500;
+
+        // list of plugins to load
         serverConfig.pluginsToLoad = ['swagger'];
+
+        // list of modules to load
         serverConfig.modulesToLoad = ['users', 'groups'];
+
+
 
 const appConfig = new ApplicationStartupParams();
     appConfig.dbConfiguration = dbConfig;
