@@ -2,7 +2,7 @@ import * as Hapi from "hapi";
 import { IApplicationConfiguration } from "./config-interfaces";
 
 
-export interface IPluginInfo {
+export interface IPluginInfo {    
     
     name: string;
     

@@ -1,3 +1,4 @@
+import { IAppModule } from './core/module-interface';
 import { ApplicationStartupParams } from "./core/application-params";
 import * as Hapi from "hapi";
 
@@ -15,6 +16,9 @@ export function init(  params: ApplicationStartupParams ) : Hapi.Server {
 
     const plugins = params.serverConfiguration.pluginsToLoad;
 
+    const modules = params.serverConfiguration.modulesToLoad;
+
+
     server.connection({
         host: "0.0.0.0",
         port: process.env.port || params.serverConfiguration.port,
@@ -31,9 +35,15 @@ export function init(  params: ApplicationStartupParams ) : Hapi.Server {
         plugin.register(server, params);
     });
 
-    // load modules....
-    Users.init(server, params);
-    Groups.init(server, params);
+    // load modules
+    modules.forEach((moduleName:string) => {
+        var module:IAppModule = (require("./modules/" + moduleName)).default();
+
+        console.log(`Register module ${module.info().name} v${module.info().version}`);
+
+        module.init(server, params);
+    });
+
 
     return server;
 }

@@ -16,6 +16,7 @@ const dbConfig = new DbConfiguration();
 const serverConfig = new ServerConfiguration();
         serverConfig.port = 3500;
         serverConfig.pluginsToLoad = ['swagger'];
+        serverConfig.modulesToLoad = ['users', 'groups'];
 
 const appConfig = new ApplicationStartupParams();
     appConfig.dbConfiguration = dbConfig;
