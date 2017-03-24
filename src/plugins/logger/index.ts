@@ -1,6 +1,6 @@
 import { IPlugin, IPluginInfo, PluginInfo } from "../../core/plugin-interfaces";
 import * as Hapi from "hapi";
-import { IApplicationConfiguration } from "../../core/config-interfaces";
+import { IApplicationConfiguration } from "../../core/application-interfaces";
 
 
 class LoggerPlugin implements IPlugin {

@@ -1,3 +1,6 @@
+import * as Hapi from 'hapi';
+
+
 export interface IApplicationConfiguration {
     
     serverConfiguration : IServerConfiguration;
@@ -43,4 +46,16 @@ export interface IDbConfiguration {
     dbName: string;
 }
 
+
+export interface IModuleInfo {
+    name:string; 
+    version:string;
+}
+
+export interface IAppModule {
+
+    init(server: Hapi.Server, params: IApplicationConfiguration);
+
+    info() : IModuleInfo;
+}
 

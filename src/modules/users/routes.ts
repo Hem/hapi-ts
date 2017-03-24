@@ -1,6 +1,6 @@
 import * as Hapi from "hapi";
 import * as Joi from "joi";
-import { IApplicationConfiguration } from "../../core/config-interfaces";
+import { IApplicationConfiguration } from "../../core/application-interfaces";
 import { ApplicationStartupParams } from "../../core/application-params";
 import UserController from "./user-controller";
 

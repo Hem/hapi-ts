@@ -1,13 +1,12 @@
 
-import { IDbConfiguration } from "../../core/config-interfaces";
+import { IDbConfiguration } from "../../core/application-interfaces";
 import * as Hapi from "hapi";
 import { Group } from "./group";
 
 
 export class GroupController {
     
-    constructor (dbConfig : IDbConfiguration ) {}
-
+    constructor ( private dbConfig : IDbConfiguration ) {}
 
     public listAllGroups( request:Hapi.Request, reply:Hapi.IReply ) {
 

@@ -1,17 +1,17 @@
-import { IAppModule, ModuleInfo } from '../../core/module-interface';
+import { IAppModule, IModuleInfo } from '../../core/application-interfaces';
 import * as Hapi from 'hapi';
 import Routes from "./routes";
-import {  ApplicationStartupParams } from "../../core/application-params";
+import { ApplicationStartupParams, ModuleInfo } from '../../core/application-params';
 
 
 export class AppModule implements IAppModule {
         
-    init(server: Hapi.Server, params: ApplicationStartupParams) {
+    init(server: Hapi.Server, params: ApplicationStartupParams) {        
         Routes(server, params);
     }
 
 
-    public info(): ModuleInfo {
+    public info(): IModuleInfo {
         return new ModuleInfo("Group Module", "1.0.0");
     }
 

@@ -1,5 +1,5 @@
 import * as Hapi from "hapi";
-import { IApplicationConfiguration } from "../../core/config-interfaces";
+import { IApplicationConfiguration } from "../../core/application-interfaces";
 import { ApplicationStartupParams } from "../../core/application-params";
 import { GroupController } from "./group-controller";
 

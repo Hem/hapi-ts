@@ -1,6 +1,6 @@
-import { IPlugin, IPluginInfo, PluginInfo } from "../../core/plugin-interfaces";
 import * as Hapi from "hapi";
-import { IApplicationConfiguration } from "../../core/config-interfaces";
+import { IPlugin, IPluginInfo, PluginInfo } from "../../core/plugin-interfaces";
+import { IApplicationConfiguration } from "../../core/application-interfaces";
 
 
 class SwaggerPlugin implements IPlugin {
@@ -22,27 +22,25 @@ class SwaggerPlugin implements IPlugin {
                             {
                                 'name': 'tasks',
                                 'description': 'Api tasks interface.'
-                            },
-                            {
-                                'name': 'users',
-                                'description': 'Api users interface.'
                             }
                         ],
                         documentationPage: true,
-                        documentationPath: '/docs'
+                        documentationPath: '/'
                     }
                 }
-            ]
-                , (error) => {
-                    if (error) {
-                        console.log('error', error);
-                    }
-                });
+            ], 
+            
+            (error) => {
+                if (error) {
+                    console.log('error', error);
+                }
+            });
 
     }
 
+    // info!
     info(): IPluginInfo {
-        return new PluginInfo( "SwaggerPlugin", "1.0" );
+        return new PluginInfo( "Swagger Plugin Wrapper", "1.0" );
     }
 
 

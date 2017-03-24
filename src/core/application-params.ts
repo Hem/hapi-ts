@@ -2,35 +2,39 @@
  * Params needed to start up and register the application.
  * 
  */
-import { IApplicationConfiguration, IServerConfiguration, IDbConfiguration } from "./config-interfaces";
+import {
+    IApplicationConfiguration,
+    IDbConfiguration,
+    IModuleInfo,
+    IServerConfiguration
+} from './application-interfaces';
 
 
 export class ApplicationStartupParams implements IApplicationConfiguration {
-    
-    serverConfiguration: IServerConfiguration;
-
-    dbConfiguration: IDbConfiguration;
+    public serverConfiguration: IServerConfiguration;
+    public dbConfiguration: IDbConfiguration;
 }
 
 export class ServerConfiguration implements IServerConfiguration {
-    host: string;
-    port: number;
-    pluginsToLoad: String[];
-    modulesToLoad: String[];
+    public host: string;
+    public port: number;
+    public pluginsToLoad: String[];
+    public modulesToLoad: String[];
 }
 
 export class DbConfiguration implements IDbConfiguration {
-    dbHostname: string;
-    dbPortNumber: number;
-    dbUsername: string;
-    dbPassword: string;
-    dbName: string;
+    public dbHostname: string;
+    public dbPortNumber: number;
+    public dbUsername: string;
+    public dbPassword: string;
+    public dbName: string;
 }
 
-/**
- * Parameters passed on Plugin Registration
- */
-export class PluginRegistrationParams {
 
+
+
+export class ModuleInfo implements IModuleInfo {
+
+    constructor(public name:string, public version:string ) {}
+    
 }
-

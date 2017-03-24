@@ -1,5 +1,5 @@
 import * as Hapi from "hapi";
-import { IApplicationConfiguration } from "./config-interfaces";
+import { IApplicationConfiguration } from "./application-interfaces";
 
 
 export interface IPluginInfo {    

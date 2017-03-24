@@ -1,9 +1,10 @@
-import { IAppModule } from './core/module-interface';
-import { ApplicationStartupParams } from "./core/application-params";
-import * as Hapi from "hapi";
+import { IAppModule } from './core/application-interfaces';
 
-import * as Users from "./modules/users";
-import * as Groups from "./modules/groups";
+import { ApplicationStartupParams } from "./core/application-params";
+import * as Hapi from 'hapi';
+
+import * as Users from './modules/users';
+import * as Groups from './modules/groups';
 import { IPlugin } from "./core/plugin-interfaces";
 
 /**

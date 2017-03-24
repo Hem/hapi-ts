@@ -4,7 +4,7 @@
 
 import * as Hapi from "hapi";
 import * as Server from "./server";
-import { DbConfiguration, ApplicationStartupParams, ServerConfiguration, PluginRegistrationParams } from "./core/application-params";
+import { DbConfiguration, ApplicationStartupParams, ServerConfiguration } from "./core/application-params";
 
 
 const dbConfig = new DbConfiguration();

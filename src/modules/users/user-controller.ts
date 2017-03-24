@@ -1,4 +1,4 @@
-import { IApplicationConfiguration, IDbConfiguration } from "../../core/config-interfaces";
+import { IApplicationConfiguration, IDbConfiguration } from "../../core/application-interfaces";
 import { User } from "./user";
 import * as Hapi from "hapi";
 
