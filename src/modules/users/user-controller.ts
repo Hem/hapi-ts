@@ -9,7 +9,7 @@ export default class UserController {
     userRepository: UserRepository;
 
 
-    constructor(public dbConfig:IDbConfiguration ) {
+    constructor( ) {
         this.userRepository = new UserRepository();
     }
 

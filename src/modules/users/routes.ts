@@ -8,7 +8,7 @@ export default function(server:Hapi.Server, params:ApplicationStartupParams) {
 
 
     // Not sure why but I think this is now a singleton!!!
-    const userController = new UserController(params.dbConfiguration);
+    const userController = new UserController();
     server.bind(userController);
 
 
