@@ -1,4 +1,3 @@
-import { User } from '../../data/models';
 import { IApplicationConfiguration, IDbConfiguration } from "../../core/application-interfaces";
 import * as Hapi from 'hapi';
 import { UserRepository } from "../../data/repository/user-repository";
@@ -39,12 +38,5 @@ export default class UserController {
             });
     }
 
-
-    public getUserInfo( request: Hapi.Request, reply: Hapi.IReply ) {
-
-        const id = parseInt(request.params.id, 10);
-
-        reply( new User(id, "User Info for " + id) );
-    }
 
 }

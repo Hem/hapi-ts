@@ -1,5 +1,5 @@
 import { AbstractDbProvider } from '../../core/abstract-db-provider';
-import { User } from '../models';
+import { User } from '../models/models';
 import * as Promise from "bluebird";
 import { IRepository } from "../../core/irepository";
 

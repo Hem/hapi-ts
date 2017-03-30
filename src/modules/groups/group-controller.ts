@@ -1,7 +1,6 @@
 
 import { IDbConfiguration } from "../../core/application-interfaces";
 import * as Hapi from "hapi";
-import { Group } from "../../data/models";
 import { GroupRepository } from "../../data/repository/group-repository";
 
 
@@ -23,7 +22,8 @@ export class GroupController {
     
     public findGroupsById( request:Hapi.Request, reply:Hapi.IReply ) {
         
-        const id = parseInt( request.params.id );
+        
+        const id = parseInt( request.params.id , 10);
             
             this.groupRepository.getById(id)
             .then( (records) =>  reply(records) )

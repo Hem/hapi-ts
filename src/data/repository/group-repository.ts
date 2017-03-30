@@ -1,4 +1,4 @@
-import { Group } from '../models';
+import { Group } from '../models/models';
 import { IRepository } from "../../core/irepository";
 import { AbstractDbProvider } from "../../core/abstract-db-provider";
 import * as Promise from "bluebird";
