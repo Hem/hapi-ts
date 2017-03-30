@@ -33,9 +33,15 @@ export interface IServerConfiguration {
     modulesToLoad: Array<String>;
 }
 
+export enum DbType {
+    sqlite3,
+    mysql,
+    mssql
+}
 
 export interface IDbConfiguration {
-    
+    dbType: DbType;
+
     dbHostname: string;
     dbPortNumber: number;
     
@@ -44,6 +50,10 @@ export interface IDbConfiguration {
 
     // default database to connect too
     dbName: string;
+
+    minConnection:number;
+    maxConnection:number;
+    acquireConnectionTimeout: number;
 }
 
 

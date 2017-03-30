@@ -13,24 +13,22 @@
   },
   "author": "",
   "license": "ISC",
-  
   "dependencies": {
-    "hapi": "16.1.0",
-    "joi": "10.3.0",
-    
-    "hapi-swagger": "7.7.0",
-    "swagger":"0.7.5",
-    "inert":"4.1.0",
-    "vision":"4.1.1",
-
+    "bluebird": "^3.5.0",
     "good": "7.1.0",
-    "good-console": "6.4.0"
+    "good-console": "6.4.0",
+    "hapi": "16.1.0",
+    "hapi-swagger": "7.7.0",
+    "inert": "4.1.0",
+    "joi": "10.3.0",
+    "knex": "^0.12.9",
+    "sqlite3": "^3.1.8",
+    "swagger": "0.7.5",
+    "vision": "4.1.1"
   },
   "devDependencies": {
-    
     "gulp": "3.9.1",
     "nodemon": "1.11.0",
-    
     "tslint": "4.5.1",
     "typescript": "2.2.1"
   }

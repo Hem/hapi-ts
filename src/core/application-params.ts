@@ -3,6 +3,7 @@
  * 
  */
 import {
+    DbType,
     IApplicationConfiguration,
     IDbConfiguration,
     IModuleInfo,
@@ -28,6 +29,10 @@ export class DbConfiguration implements IDbConfiguration {
     public dbUsername: string;
     public dbPassword: string;
     public dbName: string;
+    public dbType: DbType;
+    public minConnection: number;
+    public maxConnection: number;
+    public acquireConnectionTimeout: number;
 }
 
 

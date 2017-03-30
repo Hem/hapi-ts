@@ -1,3 +1,4 @@
+import { DbType } from './core/application-interfaces';
 /// <reference path="../typings/index.d.ts" />
 
 "use strict";
@@ -7,11 +8,12 @@ import * as Server from "./server";
 import { DbConfiguration, ApplicationStartupParams, ServerConfiguration } from "./core/application-params";
 
 
-const dbConfig = new DbConfiguration();
-        dbConfig.dbHostname = "localhost";
-        dbConfig.dbName = "hapi-ts-test";
-        dbConfig.dbUsername = "unknown";
-        dbConfig.dbPassword = "tiger";
+// Load db config from file!!!
+// const dbConfig = new DbConfiguration();
+//     dbConfig.dbType = DbType.sqlite3;
+//     dbConfig.dbName = `.\hapi.sqlite`;
+
+
         
 const serverConfig = new ServerConfiguration();
         serverConfig.host = "localhost";
@@ -26,7 +28,7 @@ const serverConfig = new ServerConfiguration();
 
 
 const appConfig = new ApplicationStartupParams();
-    appConfig.dbConfiguration = dbConfig;
+//    appConfig.dbConfiguration = dbConfig;
     appConfig.serverConfiguration = serverConfig;
 
 const hapiServer = Server.init(appConfig);
