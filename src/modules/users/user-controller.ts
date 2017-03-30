@@ -1,19 +1,28 @@
-import { User } from '../../repository/models';
+import { User } from '../../data/models';
 import { IApplicationConfiguration, IDbConfiguration } from "../../core/application-interfaces";
 import * as Hapi from 'hapi';
+import { UserRepository } from "../../data/repository/user-repository";
 
 
 export default class UserController {
 
-    constructor(public dbConfig:IDbConfiguration ) {}
+    userRepository: UserRepository;
+
+
+    constructor(public dbConfig:IDbConfiguration ) {
+        this.userRepository = new UserRepository();
+    }
 
 
     public findUsers( request: Hapi.Request, reply: Hapi.IReply ) {
 
-        reply([ 
-            new User(1, "User for 1"),
-            new User(2, "User for 2")
-         ]);
+            this.userRepository.find('oh')
+            .then((value) => {
+                    reply( value );
+            })
+            .error((err) => {
+                reply(err);
+            });
     }
 
 
@@ -21,7 +30,13 @@ export default class UserController {
 
         const id = parseInt(request.params.id, 10);
 
-        reply( new User(id, "Name for " + id) );
+        this.userRepository.getById(id)
+            .then((value) => {
+                    reply( value );
+            })
+            .error((err) => {
+                reply(err);
+            });
     }
 
 

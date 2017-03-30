@@ -5,14 +5,7 @@ import { DbType } from './core/application-interfaces';
 
 import * as Hapi from "hapi";
 import * as Server from "./server";
-import { DbConfiguration, ApplicationStartupParams, ServerConfiguration } from "./core/application-params";
-
-
-// Load db config from file!!!
-// const dbConfig = new DbConfiguration();
-//     dbConfig.dbType = DbType.sqlite3;
-//     dbConfig.dbName = `.\hapi.sqlite`;
-
+import { ApplicationStartupParams, ServerConfiguration } from "./core/application-params";
 
         
 const serverConfig = new ServerConfiguration();
@@ -28,8 +21,8 @@ const serverConfig = new ServerConfiguration();
 
 
 const appConfig = new ApplicationStartupParams();
-//    appConfig.dbConfiguration = dbConfig;
     appConfig.serverConfiguration = serverConfig;
+
 
 const hapiServer = Server.init(appConfig);
 

@@ -40,7 +40,7 @@ export enum DbType {
 }
 
 export interface IDbConfiguration {
-    dbType: DbType;
+    dbType: string;
 
     dbHostname: string;
     dbPortNumber: number;

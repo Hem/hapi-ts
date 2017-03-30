@@ -9,7 +9,7 @@ class LoggerPlugin implements IPlugin {
         
         const options = {
                             ops: {
-                                interval: 1000
+                                interval: 5000
                             },
                             reporters: {
                                 myConsoleReporter: [{

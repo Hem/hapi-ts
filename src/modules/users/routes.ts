@@ -38,20 +38,7 @@ export default function(server:Hapi.Server, params:ApplicationStartupParams) {
         }
     });
 
-    server.route({
-        method: 'GET',
-        path: '/api/user/{id}/info',
-        config: {
-            handler: userController.getUserInfo,
-            description: "Returns the user info object",
-            tags: ['api', 'users'],
-            validate: {
-                params: {
-                    id: Joi.string().required()
-                }
-            }
-        }
-    });
+  
 
 
 }
