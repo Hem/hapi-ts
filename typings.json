@@ -5,6 +5,7 @@
   "dependencies": {
     "bluebird": "registry:dt/bluebird#3.5.0+20170323165310",
     "hapi": "registry:dt/hapi#16.0.0+20170125175540",
+    "joi": "registry:dt/joi#10.0.0+20170211105955",
     "knex": "registry:dt/knex#0.0.0+20170322192047"
   }
 }

@@ -14,7 +14,15 @@ export class GroupController {
 
     public listAllGroups( request:Hapi.Request, reply:Hapi.IReply ) {
 
-        this.groupRepository.find('')
+        console.info("request.path", request.path);
+        console.info("request.payload", request.payload);
+        console.info("request.params", request.params);
+        console.info("request.query", request.query);
+
+        const filter = request.payload.filter;
+
+        // tslint:disable-next-line:
+        this.groupRepository.find(filter)
             .then( (records) =>  reply(records) )
             .error( (err) => reply(err) );
     }

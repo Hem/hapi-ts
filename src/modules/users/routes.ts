@@ -13,12 +13,19 @@ export default function(server:Hapi.Server, params:ApplicationStartupParams) {
 
 
     server.route({
-        method: 'GET',
+        method: 'POST',
         path: '/api/users',
         config: {
             handler: userController.findUsers,
             description: "finds all users matching filter criteria",
-            tags: ['api', 'users']
+            tags: ['api', 'users'],
+            validate: {
+                payload: {
+                    filter: Joi.string(),
+                    pageSize: Joi.number().default(20),
+                    pageIndex: Joi.number().default(1)
+                }
+            }
         }
     });
 

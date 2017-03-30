@@ -15,7 +15,14 @@ export default class UserController {
 
     public findUsers( request: Hapi.Request, reply: Hapi.IReply ) {
 
-            this.userRepository.find('oh')
+            console.info("request.path", request.path);
+            console.info("request.payload", request.payload);
+            console.info("request.params", request.params);
+            console.info("request.query", request.query);
+
+            const filter = request.payload.filter;
+            
+            this.userRepository.find( filter )
             .then((value) => {
                     reply( value );
             })

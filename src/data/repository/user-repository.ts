@@ -10,24 +10,27 @@ export interface IUserRepository extends IRepository<User> {
 
 export class UserRepository extends AbstractDbProvider implements IUserRepository {
     
-
-
     constructor() {
-        super();
+        super('users');
     }
 
     getById(id: any): Promise<User> {
     
-        return this.db.table("users")
+        return this.getTable()
                     .where({id: id})
                     .first();
                     
     }
 
-    find(filter: any): Promise<User[]> {
+    find (filter: any): Promise<User[]> {
+        
+        const table = this.getTable();
 
-        return this.db.table("users")
-                        .where('name', 'like', `%${filter}%`);
+        if ( filter ) {
+            return table.where('name', 'like', `%${filter}%`)
+        } else {
+            return table;
+        }
 
     }
 

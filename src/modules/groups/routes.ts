@@ -1,3 +1,4 @@
+import { join } from 'path';
 import * as Hapi from "hapi";
 import * as Joi from "joi";
 import { IApplicationConfiguration } from "../../core/application-interfaces";
@@ -14,12 +15,19 @@ export default function(server:Hapi.Server, params:ApplicationStartupParams) {
 
 
     server.route({
-        method: 'GET',
+        method: 'POST',
         path: '/api/groups',
         config: {
             handler: groupController.listAllGroups,
             description: "Lists all groups",
-            tags: ['api', 'groups']
+            tags: ['api', 'groups'],
+            validate: {
+                payload: {
+                    filter: Joi.string(),
+                    pageSize: Joi.number().default(20),
+                    pageIndex: Joi.number().default(1)
+                }
+            }
         }
     });
 

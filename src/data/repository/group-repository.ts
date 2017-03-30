@@ -8,16 +8,27 @@ export interface IGroupRepository extends IRepository<Group> {
 }
 
 export class GroupRepository extends AbstractDbProvider implements IGroupRepository {
+    constructor() {
+        super('groups');
+    }
     
     getById(id: any): Promise<Group> {
-        return this.db.table('groups')
+        
+        return this.getTable()
                     .where({id: id})
                     .first();
     }
     
     find(filter: any): Promise<Group[]> {
-        return this.db.table('groups')
-                .where('name', 'like', `%${filter}%`)
+        
+        const table = this.getTable();
+
+        if ( filter ) {
+            return table.where('name', 'like', `%${filter}%`);
+        } else {
+            return table;
+        }
+
     }
 
     create(dto: Group): Promise<Group> {

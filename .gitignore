@@ -33,6 +33,7 @@ node_modules
 
 #Ignore build folder
 build
+bin
 
 #Ignore typings
 typings
