@@ -10,3 +10,22 @@ export interface IRepository<T> {
 
     update(dto:T) : Promise<T>;
 }
+
+
+
+// LookupRepository search and select framework
+export interface ILookupRepository {
+    
+    getById(id:any) : Promise<any>;
+
+    find(filter:any) : Promise<any[]>;
+
+}
+
+
+
+export interface ILookupRepositoryFactory {
+
+    getRepository(type:string) : ILookupRepository;
+
+}

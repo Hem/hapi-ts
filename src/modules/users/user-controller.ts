@@ -1,3 +1,4 @@
+import * as repl from 'repl';
 import { IApplicationConfiguration, IDbConfiguration } from "../../core/application-interfaces";
 import * as Hapi from 'hapi';
 import { UserRepository } from "../../data/repository/user-repository";
@@ -8,11 +9,14 @@ export default class UserController {
     userRepository: UserRepository;
 
 
-    constructor( ) {
+    constructor () {
         this.userRepository = new UserRepository();
     }
 
 
+
+    // POST: /api/users 
+    // { filter: text, } 
     public findUsers( request: Hapi.Request, reply: Hapi.IReply ) {
 
             console.info("request.path", request.path);
@@ -32,7 +36,9 @@ export default class UserController {
     }
 
 
-    public getUserById(request:Hapi.Request, reply:Hapi.IReply) {
+    
+    // GET: /api/user/{id}
+    public getUserById (request:Hapi.Request, reply:Hapi.IReply) {
 
         const id = parseInt(request.params.id, 10);
 

@@ -1,14 +1,14 @@
 import { AbstractDbProvider } from '../../core/abstract-db-provider';
 import { User } from '../models/models';
 import * as Promise from "bluebird";
-import { IRepository } from "../../core/irepository";
+import { ILookupRepository, IRepository } from '../../core/irepository';
 
 export interface IUserRepository extends IRepository<User> {
 
 }
 
 
-export class UserRepository extends AbstractDbProvider implements IUserRepository {
+export class UserRepository extends AbstractDbProvider implements IUserRepository, ILookupRepository {
     
     constructor() {
         super('users');

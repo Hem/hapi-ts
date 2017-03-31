@@ -16,7 +16,7 @@ const serverConfig = new ServerConfiguration();
         serverConfig.pluginsToLoad = ['swagger' /*, 'logger'*/ ];
 
         // list of modules to load
-        serverConfig.modulesToLoad = ['users', 'groups'];
+        serverConfig.modulesToLoad = ['users', 'groups', 'lookup'];
 
 
 

@@ -1,5 +1,5 @@
 import { Group } from '../models/models';
-import { IRepository } from "../../core/irepository";
+import { ILookupRepository, IRepository } from '../../core/irepository';
 import { AbstractDbProvider } from "../../core/abstract-db-provider";
 import * as Promise from "bluebird";
 
@@ -7,7 +7,8 @@ export interface IGroupRepository extends IRepository<Group> {
 
 }
 
-export class GroupRepository extends AbstractDbProvider implements IGroupRepository {
+export class GroupRepository extends AbstractDbProvider implements IGroupRepository, ILookupRepository {
+    
     constructor() {
         super('groups');
     }
