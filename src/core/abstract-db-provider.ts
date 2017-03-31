@@ -9,10 +9,14 @@ export class AbstractDbProvider {
     private _tableName: string;
 
     constructor(tableName: string) {     
-
         this._tableName = tableName;
-           
-        this._db = Knex({ 
+    }
+
+
+    getDb() : Knex {
+        
+        if (!this._db) {
+                this._db = Knex({ 
                     client: "sqlite3",
                     connection: {
                         filename: Config.database.dbName
@@ -23,12 +27,15 @@ export class AbstractDbProvider {
                     },
                     useNullAsDefault: true
                 });
-    
+        }
+
+        return this._db;
     }
 
 
     getTable () : Knex.QueryBuilder { 
-        return this._db.table( this._tableName);    
+
+        return this.getDb().table( this._tableName);    
     }
 
 }

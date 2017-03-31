@@ -13,7 +13,7 @@ const serverConfig = new ServerConfiguration();
         serverConfig.port = 3500;
 
         // list of plugins to load
-        serverConfig.pluginsToLoad = ['swagger' /*, 'logger'*/ ];
+        serverConfig.pluginsToLoad = ['swagger', 'logger' ];
 
         // list of modules to load
         serverConfig.modulesToLoad = ['users', 'groups', 'lookup'];
