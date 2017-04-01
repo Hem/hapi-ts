@@ -2,15 +2,15 @@ import * as Hapi from 'hapi';
 
 
 export interface IApplicationConfiguration {
-    
-    serverConfiguration : IServerConfiguration;
 
-    dbConfiguration : IDbConfiguration;  
+    serverConfiguration: IServerConfiguration;
+
+    dbConfiguration: IDbConfiguration;
 }
 
 
 export interface IServerConfiguration {
-    
+
     /**
      * Host name
      */
@@ -44,28 +44,28 @@ export interface IDbConfiguration {
 
     dbHostname: string;
     dbPortNumber: number;
-    
+
     dbUsername: string;
     dbPassword: string;
 
     // default database to connect too
     dbName: string;
 
-    minConnection:number;
-    maxConnection:number;
+    minConnection: number;
+    maxConnection: number;
     acquireConnectionTimeout: number;
 }
 
 
 export interface IModuleInfo {
-    name:string; 
-    version:string;
+    name: string;
+    version: string;
 }
 
 export interface IAppModule {
 
     init(server: Hapi.Server, params: IApplicationConfiguration);
 
-    info() : IModuleInfo;
+    info(): IModuleInfo;
 }
 

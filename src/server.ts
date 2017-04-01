@@ -11,8 +11,8 @@ import { IPlugin } from "./core/plugin-interfaces";
  * 
  * @param params Call 
  */
-export function init(  params: ApplicationStartupParams ) : Hapi.Server {
-    
+export function init(params: ApplicationStartupParams): Hapi.Server {
+
     const server = new Hapi.Server();
 
     const plugins = params.serverConfiguration.pluginsToLoad;
@@ -36,9 +36,10 @@ export function init(  params: ApplicationStartupParams ) : Hapi.Server {
         plugin.register(server, params);
     });
 
+
     // load modules
-    modules.forEach((moduleName:string) => {
-        var module:IAppModule = (require("./modules/" + moduleName)).default();
+    modules.forEach((moduleName: string) => {
+        var module: IAppModule = (require("./modules/" + moduleName)).default();
 
         console.log(`Register module ${module.info().name} v${module.info().version}`);
 

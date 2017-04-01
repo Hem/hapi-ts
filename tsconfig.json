@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "bin",
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
@@ -9,6 +9,7 @@
     "experimentalDecorators": true
   },
   "include": [
+    "data/**/**.ts",
     "src/**/**.ts",
     "test/**/**.ts",
     "typings/index.d.ts"

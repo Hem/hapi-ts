@@ -6,30 +6,30 @@ import { IApplicationConfiguration } from "../../core/application-interfaces";
 class SwaggerPlugin implements IPlugin {
 
     register(server: Hapi.Server, appConfig: IApplicationConfiguration) {
-        
+
         server.register([
-                require('inert'),
-                require('vision'),
-                {
-                    register: require('hapi-swagger'),
-                    options: {
-                        info: {
-                            title: 'Task Api',
-                            description: 'Task Api Documentation',
-                            version: '1.0'
-                        },
-                        tags: [
-                            {
-                                'name': 'tasks',
-                                'description': 'Api tasks interface.'
-                            }
-                        ],
-                        documentationPage: true,
-                        documentationPath: '/'
-                    }
+            require('inert'),
+            require('vision'),
+            {
+                register: require('hapi-swagger'),
+                options: {
+                    info: {
+                        title: 'Task Api',
+                        description: 'Task Api Documentation',
+                        version: '1.0'
+                    },
+                    tags: [
+                        {
+                            'name': 'tasks',
+                            'description': 'Api tasks interface.'
+                        }
+                    ],
+                    documentationPage: true,
+                    documentationPath: '/'
                 }
-            ], 
-            
+            }
+        ],
+
             (error) => {
                 if (error) {
                     console.log('error', error);
@@ -40,7 +40,7 @@ class SwaggerPlugin implements IPlugin {
 
     // info!
     info(): IPluginInfo {
-        return new PluginInfo( "Swagger Plugin Wrapper", "1.0" );
+        return new PluginInfo("Swagger Plugin Wrapper", "1.0");
     }
 
 

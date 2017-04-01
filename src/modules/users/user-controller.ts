@@ -1,7 +1,7 @@
 import * as repl from 'repl';
-import { IApplicationConfiguration, IDbConfiguration } from "../../core/application-interfaces";
 import * as Hapi from 'hapi';
-import { UserRepository } from "../../data/repository/user-repository";
+import { IApplicationConfiguration, IDbConfiguration } from "../../core/application-interfaces";
+import { UserRepository } from "../../../data/data-module";
 
 
 export default class UserController {

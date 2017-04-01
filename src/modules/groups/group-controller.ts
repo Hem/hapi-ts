@@ -1,7 +1,7 @@
 
+import * as Hapi from 'hapi';
 import { IDbConfiguration } from "../../core/application-interfaces";
-import * as Hapi from "hapi";
-import { GroupRepository } from "../../data/repository/group-repository";
+import { GroupRepository } from "../../../data/data-module";
 
 
 export class GroupController {

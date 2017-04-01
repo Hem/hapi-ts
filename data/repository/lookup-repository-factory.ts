@@ -1,6 +1,7 @@
+import { ILookupRepository, ILookupRepositoryFactory } from '../core/interfaces';
 import { GroupRepository } from './group-repository';
 import { UserRepository } from './user-repository';
-import { ILookupRepository, ILookupRepositoryFactory } from '../../core/irepository';
+
 
 export class LookupRepositoryFactory implements ILookupRepositoryFactory {
     
